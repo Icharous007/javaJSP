@@ -1,6 +1,13 @@
 package model;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import com.oracle.wls.shaded.org.apache.bcel.generic.RETURN;
 
 public class ModelLogin implements Serializable {
 
@@ -23,6 +30,51 @@ public class ModelLogin implements Serializable {
 	private String cidade;
 	private String estado;
 	private String numero;
+	private String endereco;
+	private Date dataDeNascimento;
+	private Double renda;
+	private String dataDeNascimentoString;
+	List<ModelTelefone> listaDeTelefones = new ArrayList<>();
+	
+	public void setListaDeTelefones(List<ModelTelefone> listaDeTelefones) {
+		this.listaDeTelefones = listaDeTelefones;
+	}
+	
+	public List<ModelTelefone> getListaDeTelefones() {
+		return listaDeTelefones;
+	}
+	
+	public Double getRenda() {
+		return renda;
+	}
+	
+	public String getDataDeNascimentoString() {
+		return dataDeNascimentoString;
+	}
+	
+	public void setDataDeNascimentoString() {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		dataDeNascimentoString = dateFormat.format(this.dataDeNascimento);
+	}
+	
+	public void setRenda(Double renda) {
+		this.renda = renda;
+	}
+	
+	public Date getDataDeNascimento() {
+		return dataDeNascimento;
+	}
+	
+	public void setDataDeNascimento(Date dataDeNascimento) {
+		this.dataDeNascimento = dataDeNascimento;
+	}
+	
+	public String getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
 		
 	public boolean IsNew() {
 		return this.id == null;

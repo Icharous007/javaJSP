@@ -21,7 +21,7 @@ import conexao.ConexaoUnica;
 
 //@WebFilter("/FiltroDeAutenticacao")
 //intercepta todas as requisições para a aplicação
-@WebFilter(urlPatterns = { "/principal/*" })
+@WebFilter(urlPatterns = { "/principal/*","/ServLetUsuarioController","/ServLetPerquisaUsuario" })
 public class FiltroDeAutenticacao extends HttpFilter implements Filter {
 
 	private static final long serialVersionUID = 1L;
@@ -56,7 +56,7 @@ public class FiltroDeAutenticacao extends HttpFilter implements Filter {
 
 			HttpServletRequest requisicao = (HttpServletRequest) request;
 			String urlParaSerAutenticada = requisicao.getServletPath();
-			System.out.println(urlParaSerAutenticada);
+			//System.out.println(urlParaSerAutenticada);
 			HttpSession sessao = requisicao.getSession();
 			ModelLogin usuarioLogado = (ModelLogin) sessao.getAttribute("usuarioLogado");
 

@@ -17,7 +17,7 @@ public class DAOLoginRepository implements Serializable  {
 		conexao = ConexaoUnica.getConexao();
 	}
 	
-	public boolean autenticacao(ModelLogin modelLogin) throws Exception {
+	public ModelLogin autenticacao(ModelLogin modelLogin) throws Exception {
 		String sql = "SELECT * FROM public.usuarios WHERE upper(login_usuario)=  upper(?) and upper(senha_usuario) = upper(?)";
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet  = null;
@@ -28,8 +28,16 @@ public class DAOLoginRepository implements Serializable  {
 			
 			resultSet = preparedStatement.executeQuery();
 			
-			return resultSet.next();
-			
+			while( resultSet.next()) {
+				modelLogin.setNome(resultSet.getString("nome"));
+				modelLogin.setEmail(resultSet.getString("email"));
+				modelLogin.setLogin(resultSet.getString("login_usuario"));
+				modelLogin.setSenha(resultSet.getString("senha_usuario"));
+				modelLogin.setId(resultSet.getLong("id"));
+				modelLogin.setUserAdmin(resultSet.getBoolean("useradmin"));
+				modelLogin.setPerfil_usuario(resultSet.getString("perfil_usuario"));
+			}
+			return modelLogin;
 		} finally {
 			if (preparedStatement!=null) {
 				preparedStatement.close();
