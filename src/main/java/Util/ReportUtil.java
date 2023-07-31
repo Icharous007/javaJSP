@@ -20,7 +20,7 @@ public class ReportUtil implements Serializable {
 
 	private static final long serialVersionUID = -2900526389346074616L;
 	
-	public byte[] gerarRelatórioPDF(List listaDeDados, String nomeDoRelatorio, ServletContext servletContext)
+	public byte[] gerarRelatorioPDF(List listaDeDados, String nomeDoRelatorio, ServletContext servletContext)
 			throws Exception {
 		//cria a coleção de dados
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(listaDeDados);
@@ -31,7 +31,7 @@ public class ReportUtil implements Serializable {
 
 	}
 	
-	public byte[] gerarRelatórioPDF(List listaDeDados,String  nomeDoRelatorio, HashMap<String, Object> parametros, ServletContext servletContext)
+	public byte[] gerarRelatorioPDF(List listaDeDados,String  nomeDoRelatorio, HashMap<String, Object> parametros, ServletContext servletContext)
 			throws Exception {
 		//cria a coleção de dados
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(listaDeDados);
@@ -42,7 +42,7 @@ public class ReportUtil implements Serializable {
 
 	}
 	
-	public byte[] gerarRelatórioECXEL(List listaDeDados,String  nomeDoRelatorio, HashMap<String, Object> parametros, ServletContext servletContext)
+	public byte[] gerarRelatorioECXEL(List listaDeDados,String  nomeDoRelatorio, HashMap<String, Object> parametros, ServletContext servletContext)
 			throws Exception {
 		//cria a coleção de dados
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(listaDeDados);

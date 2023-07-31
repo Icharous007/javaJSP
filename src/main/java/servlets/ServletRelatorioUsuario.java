@@ -75,7 +75,7 @@ public class ServletRelatorioUsuario extends ServLetGenericUtilsEntendendoServle
 				if(acao!=null && !acao.isEmpty()&& "imprimirPDF".equalsIgnoreCase(acao)) {
 					HashMap<String, Object> paramentros = new HashMap<>();
 					paramentros.put("PARAM_SUB_REPORT", request.getServletContext().getRealPath("relatorio")+File.separator);
-					byte[] relatorio = new ReportUtil().gerarRelatórioPDF(modelLoings, "relatorio_usuarios",paramentros, getServletContext());
+					byte[] relatorio = new ReportUtil().gerarRelatorioPDF(modelLoings, "relatorio_usuarios",paramentros, getServletContext());
 					response.setHeader("Content-Disposition", "attachment;filename=arquivo.pdf");
 					response.getOutputStream().write(relatorio);
 					return;
@@ -83,7 +83,7 @@ public class ServletRelatorioUsuario extends ServLetGenericUtilsEntendendoServle
 				else if("imprimirECXEL".equalsIgnoreCase(acao)&&acao!=null && !acao.isEmpty()) {
 					HashMap<String, Object> paramentros = new HashMap<>();
 					paramentros.put("PARAM_SUB_REPORT", request.getServletContext().getRealPath("relatorio")+File.separator);
-					byte[] relatorio = new ReportUtil().gerarRelatórioECXEL(modelLoings, "relatorio_usuarios",paramentros, getServletContext());
+					byte[] relatorio = new ReportUtil().gerarRelatorioECXEL(modelLoings, "relatorio_usuarios",paramentros, getServletContext());
 					response.setHeader("Content-Disposition", "attachment;filename=arquivo.xls");
 					response.getOutputStream().write(relatorio);
 					return;
@@ -94,7 +94,7 @@ public class ServletRelatorioUsuario extends ServLetGenericUtilsEntendendoServle
 				if(acao!=null && !acao.isEmpty()&& "imprimirPDF".equalsIgnoreCase(acao)) {
 					HashMap<String, Object> paramentros = new HashMap<>();
 					paramentros.put("PARAM_SUB_REPORT", request.getServletContext().getRealPath("relatorio")+File.separator);
-					byte[] relatorio = new ReportUtil().gerarRelatórioPDF(modelLoings, "relatorio_usuarios",paramentros, getServletContext());
+					byte[] relatorio = new ReportUtil().gerarRelatorioPDF(modelLoings, "relatorio_usuarios",paramentros, getServletContext());
 					response.setHeader("Content-Disposition", "attachment;filename=arquivo.pdf");
 					response.getOutputStream().write(relatorio);
 					return;
@@ -102,7 +102,7 @@ public class ServletRelatorioUsuario extends ServLetGenericUtilsEntendendoServle
 				else if("imprimirECXEL".equalsIgnoreCase(acao)&&acao!=null && !acao.isEmpty()) {
 					HashMap<String, Object> paramentros = new HashMap<>();
 					paramentros.put("PARAM_SUB_REPORT", request.getServletContext().getRealPath("relatorio")+File.separator);
-					byte[] relatorio = new ReportUtil().gerarRelatórioECXEL(modelLoings, "relatorio_usuarios",paramentros, getServletContext());
+					byte[] relatorio = new ReportUtil().gerarRelatorioECXEL(modelLoings, "relatorio_usuarios",paramentros, getServletContext());
 					response.setHeader("Content-Disposition", "attachment;filename=arquivo.xls");
 					response.getOutputStream().write(relatorio);
 					return;

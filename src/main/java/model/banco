@@ -1,0 +1,5 @@
+CREATE TABLE public.versionador_banco(
+	id integer NOT NULL DEFAULT NEXTVAL ('versionador_banco_seq'::regclass),
+	arquivo_sql CHARACTER VARYING(50) NOT NULL,
+	CONSTRAINT id_pk PRIMARY KEY(id)
+)

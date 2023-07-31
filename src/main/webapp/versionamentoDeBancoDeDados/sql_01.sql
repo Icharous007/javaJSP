@@ -1,0 +1,1 @@
+ALTER TABLE IF EXISTS public.usuarios ADD COLUMN cpf character varying(13);
